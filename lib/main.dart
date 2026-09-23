@@ -1,3 +1,7 @@
+//Activity 04
+// Group 1
+// Nick Gilreath & Beamlak Mulugeta
+
 import 'package:flutter/material.dart';
 
 // ============================================================================
@@ -46,6 +50,8 @@ class _TactileDeckAppState extends State<TactileDeckApp> {
   }
 }
 
+// setState is invoked everytime darkmode is triggered and when any of the 4 main widget are pressed 
+
 // ============================================================================
 // 3. MAIN DASHBOARD SCREEN (Stateful Controller)
 // ============================================================================
@@ -53,6 +59,8 @@ class _TactileDeckAppState extends State<TactileDeckApp> {
 // powerLevel, and systemStatus, and rebuilds the metrics card, status banner,
 // buttons, and slider every time setState() runs.
 // Reference: https://api.flutter.dev/flutter/material/Scaffold-class.html
+
+// this is a stateful widget and it owns the variables mana, spellscast, arcane power for example
 class ThemeChallengePanel extends StatefulWidget {
   const ThemeChallengePanel({super.key});
 
@@ -94,6 +102,8 @@ class _ThemeChallengePanelState extends State<ThemeChallengePanel> {
   }
 }
 
+
+// this is another stateful widget that owns isDark for example
 class ControlDeckScreen extends StatefulWidget {
   final bool isDark;
   final VoidCallback onToggleTheme;
@@ -122,7 +132,7 @@ class _ControlDeckScreenState extends State<ControlDeckScreen> {
     });
   }
 
-  @override
+  @override // this is one of the stateless widgets
   Widget build(BuildContext context) {
     // Dynamic background color adapting to current theme
     final screenBg = widget.isDark ? const Color(0xFF1E1F29) : const Color(0xFFE0E5EC);
@@ -169,6 +179,8 @@ class _ControlDeckScreenState extends State<ControlDeckScreen> {
                   ),
                 ],
               ),
+              
+              
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
